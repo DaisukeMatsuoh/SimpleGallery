@@ -1,0 +1,48 @@
+# Simple Gallery Configuration Example
+# Copy this file to config.toml and edit the values for your environment
+
+[server]
+# Server bind address
+host = "127.0.0.1"
+# Server port
+port = 8080
+# Session lifetime in hours
+session_lifetime_hours = 24
+
+[storage]
+# Media storage root directory
+media_root = "/tmp/simple-gallery/media"
+# Thumbnail storage root directory
+thumb_root = "/tmp/simple-gallery/thumbs"
+# SQLite database file path
+db_path = "/tmp/simple-gallery/simple-gallery.db"
+# Temporary directory for HLS segments (tmpfs recommended)
+temp_dir = "/tmp/simple-gallery"
+
+[media]
+# Maximum thumbnail width in pixels
+thumb_max_width = 400
+# AVIF thumbnail quality (CRF 0-51, lower is better quality)
+thumb_avif_crf = 30
+# WebP thumbnail quality (0-100)
+thumb_webp_quality = 80
+# Number of background worker threads
+worker_count = 2
+# Maximum upload size in MB
+max_upload_size_mb = 4096
+
+[ffmpeg]
+# Path to FFmpeg binary
+bin = "/usr/bin/ffmpeg"
+# Use Intel QuickSync Video (QSV) for encoding
+use_qsv = true
+
+[security]
+# Maximum login attempts before lockout
+max_login_attempts = 5
+# Lockout duration in minutes
+lockout_duration_minutes = 15
+# Default share link expiration in days
+default_share_expiry_days = 7
+# Maximum share link expiration in days
+max_share_expiry_days = 30
